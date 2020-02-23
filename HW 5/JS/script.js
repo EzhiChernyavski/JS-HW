@@ -93,19 +93,27 @@ function showPiramid(h) {
 
     for (let i = 1; i <= h; i++) { //4
         strN = '';
+
         for (let b = 1; b <= i; b++) {//..1..4
-            strN += i;   
+            /*if (s != undefined && s != ' ') {
+                strN += s;
+            } else {
+                strN += i;
+            }*/
+            strN += i;
         }
         console.log(strN);
     }
+
+    console.log(arguments);
 };
 
-showPiramid(prompt('Ведите число'));
+showPiramid(prompt('Ведите число'), '*');
 
 
-    /*    for ()
-    console.log();
-}*/
+/*if (s != undefind || s != ' ') {
+    console.log(strN[s]);
+} else (console.log(strN));*/
 
 //№8
 /*function sum(a,b) {
