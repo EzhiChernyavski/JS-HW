@@ -12,7 +12,7 @@ let newArr = a.filter(function(num) {
 });
 newArr.sort(function(a, b){
     return a - b;
-});//объяснение этого выражения(функции)
+});
 
 
 newArr2 = newArr.slice(1, 4);
@@ -41,10 +41,11 @@ let str = ['10', '20', '30', '40', '50', '235', '3000'],
 let week = ['ПН', 'Вт', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'];
 
 for (let i = 0; i < week.length; i++) {
-    /*if (week[i] == 'СБ' || week[i] == 'ВС') {
+    if (week[i] == 'СБ' || week[i] == 'ВС') {
         document.write(week[i].bold());
-    } не работает */
-    console.log(week[i]);
+    } else {
+        document.write(week[i]);
+    }
 }
 
 //#8

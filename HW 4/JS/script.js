@@ -92,11 +92,31 @@ for (i = 0; ; i++) {
 console.log(i);
 
 //№9
-let x = '4 98 4 6 1 32 4 65 4 3 5 7 89 7 10 1 36 8 57';
-let z = x.split(' ');
-z. sort(function(a,b){
+let x = '-10 5 0 4 5 45 30 0 4 6 1 -8 9 4 65 4 3 5 7 89 7 10 1 36 8 57';
+let z = x.split(' '),
+    max = +z[0],
+    min = +z[0];
+
+/*z. sort(function(a,b){
    return a - b; 
 });
 console.log(z);
 
 //for (i = 0; i < z.length; i++)
+
+console.log(z[0]);
+console.log(z[z.length-1]);*/
+
+console.log(z);
+
+for (let i=0; i < z.length; i++) {
+    if (max < +z[i]) {
+        max = +z[i];
+    }
+    if (min > +z[i]) {
+        min = +z[i];
+    }
+}
+
+console.log(max);
+console.log(min);

@@ -40,24 +40,28 @@ console.log(min(8, 2));
 console.log(max(6, 12));
 
 //№4
-function createArray(from, length) {
+function createArray(from, to) {
     let array = [];
-    length = length || 0;
-    from = from || 0;
+    /*to = to || 0;
+    from = from || 0;*/
 
-    for(let i = 0; i <= length - from; i++) {
-        array[i] = from + i;
+    /*for(let i = 0; i <= to - from; i++) {
+        array[i] = from;
+    }*/
+
+    for(let i = from; i <= to; i++) {
+        array.push(i);
     }
     console.log(array);
 }
 
-createArray(2, 6);
+createArray(25, 30);
 //проработать аргументы
 
 
 
 //№5
-function isEven(even) {
+/*function isEven(even) {
     if (even % 2 == 0) {
         return true;
     } else {
@@ -81,20 +85,32 @@ function getArr(even) {
     return false
 }
 
-alert(getArr(even));
+alert(getArr(even));*/
 
 //№7
-function showPiramid() {
-    let h = 9;
-    for (let i = '#'; i < h.length; i++);
+function showPiramid(h) {
+    let strN = '';
 
+    for (let i = 1; i <= h; i++) { //4
+        strN = '';
+        for (let b = 1; b <= i; b++) {//..1..4
+            strN += i;   
+        }
+        console.log(strN);
+    }
+};
+
+showPiramid(prompt('Ведите число'));
+
+
+    /*    for ()
     console.log();
-}
+}*/
 
 //№8
-function sum(a,b) {
+/*function sum(a,b) {
     
-}
+}*/
 
 
 
