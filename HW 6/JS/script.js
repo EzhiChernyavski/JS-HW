@@ -53,6 +53,7 @@ function fomatDate(date) {
     if (dd < 10) {
         dd += '0'
     };
+    
 
     let mm = month.getDate();
     if (mm < 10) {
