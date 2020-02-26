@@ -49,11 +49,9 @@ dateNow = new Date();
 //console.log(dateNow);
 
 function fomatDate(date) {
-    let dd = date.getDate();
     if (dd < 10) {
         dd += '0'
     };
-    
 
     let mm = month.getDate();
     if (mm < 10) {

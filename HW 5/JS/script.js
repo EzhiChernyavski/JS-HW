@@ -116,9 +116,15 @@ showPiramid(prompt('Ведите число'), '*');
 } else (console.log(strN));*/
 
 //№8
-/*function sum(a,b) {
-    
-}*/
+function fib(f) {
+    let n = [];
+    for (let i = 0; i <= 1000; i++) {
+        n[i] = (f-1) + (f-2);
+    }
+    console.log(f[i]);
+}
+
+
 
 
 
