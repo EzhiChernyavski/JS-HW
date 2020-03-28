@@ -2,64 +2,67 @@
 
 
 let notification = function(type, string) {
+     
+    let elem = document.createElement('div');
 
-    let alert = document.createElement('div');
-    string = document.createTextNode('Сообщение успешно     отправлено');
-
-    alert.className = 'alert';
-
-    alert.appendChild(string);
-    document.body.appendChild(alert);
-
-    let msg = document.createElement('div');
-    let str = document.createTextNode('Добро пожаловать!');
-
-    msg.className = 'msg';
-
-    msg.appendChild(str);
-    document.body.appendChild(msg);
-
-    let error = document.createElement('div');
-    let st = document.createTextNode('Сообщение не отправлено!');
-
-    error.className = 'st';
-
-    error.appendChild(st);
-    document.body.appendChild(error);
-
-    if (type = alert) {
-        string = document.createTextNode('Сообщение успешно     отправлено');
-    } if (type = msg) {
-        string = document.createTextNode('Добро пожаловать!');
-    } if (type = error) {
-        string = document.createTextNode('Сообщение не отправлено!');
-    } 
-};
+    switch (type) {
+        case 'error':
+            elem.className = 'error';
+            elem.style.cssText='width: 300px; height: 50px; background-color: red; text-align: center; line-height: 50px; border-radius: 15px; text-transform: uppercase; margin-left: auto; font-weight: 700; ';
+            break;
+        case 'alert':
+            elem.className = 'alert';
+            elem.style.cssText='width: 300px; height: 50px; background-color: green; text-align: center; line-height: 50px; border-radius: 15px; margin-left: auto;';
+            break;
+        case 'msg':
+            elem.className = 'msg';
+            elem.style.cssText='width: 300px; height: 50px; background-color: #f5d745; text-align: center; line-height: 50px; border-radius: 15px; margin-left: auto; font-style: italic;';
+            break;
+    }
+    
 
 
+    elem.innerHTML = string;
 
-/*let alert = document.createElement('div');
-let string = document.createTextNode('Сообщение успешно отправлено');
+    let block = document.createElement('div');
 
-alert.className = 'alert';
+    block.appendChild(elem);
+    document.body.appendChild(elem);
 
-alert.appendChild(string);
-document.body.appendChild(alert);
 
-let msg = document.createElement('div');
-let str = document.createTextNode('Добро пожаловать!');
+    setTimeout(function() {
+        elem.style.opacity = 1;
+        let opacity = elem.style.opacity;
 
-msg.className = 'msg';
+        let sI = setInterval(function(){
+            opacity = opacity-0.1;
+            elem.style.opacity = opacity;
 
-msg.appendChild(str);
-document.body.appendChild(msg);
 
-let error = document.createElement('div');
-let st = document.createTextNode('Сообщение не отправлено!');
+            if (elem.style.opacity == 0.1) {
+                document.body.removeChild(elem);
+                clearInterval(sI);
+            }
 
-error.className = 'st';
+        }, 200);
+    }, 5000);
+}
 
-error.appendChild(st);
-document.body.appendChild(error);*/
+setTimeout(function() {
+    notification('error', 'Ошибка!');
+}, 2000);
+
+setTimeout(function() {
+    notification('alert', 'Вы вошли в свой личный кабинет.');
+}, 3000);
+
+setTimeout(function() {
+    notification('msg', 'Добро пожаловать!')
+}, 4000);
+
+
+
+
+
 
 
