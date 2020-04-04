@@ -1,8 +1,6 @@
 (function onPageLoaded() {
-
-
     const input = document.querySelector('input[type=text]');
-    const ul = document.querySelector('ul#myUL');
+    const ul = document.getElementById('my-ul');
     ul.addEventListener('click', (check) => {
         check.target.tagName === 'li'
         check.target.classList.toggle('checked');  
@@ -13,10 +11,10 @@
         const newItem = input.value;
         li.append(newItem);
 
-        const inputValue = document.getElementById('myUL');
+        const inputValue = document.getElementById('my-ul');
         inputValue.appendChild(li);
 
-        input.value = '';
+        input.value = '';//????
     };
 
     input.addEventListener('keypress', (keyPressed) => {
